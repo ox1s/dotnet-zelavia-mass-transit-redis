@@ -1,0 +1,47 @@
+@page "/arrivals"
+@attribute [StreamRendering(true)]
+@attribute [OutputCache(Duration = 5)]
+
+@inject ArrivalsApiClient ArrivalsApi
+
+<PageTitle>Arrivals</PageTitle>
+
+<h1>Arrivals</h1>
+
+<p>This component demonstrates showing data loaded from a backend API service.</p>
+
+@if (arrivals == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th aria-label="Email">Email</th>
+                <th aria-label="Wallet">Wallet</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in arrivals)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Email</td>
+                    <td>@user.Wallet</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<User> arrivals = null!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        arrivals = await ArrivalsApi.GetArrivalsAsyn();
+    }
+}

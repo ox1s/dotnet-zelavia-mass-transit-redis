@@ -1,0 +1,16 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.2.1">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>b34fb5b5-c9aa-4924-a400-0081dcfc134a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\zelavia.ApiService\zelavia.ApiService.csproj" />
+    <ProjectReference Include="..\zelavia.Web\zelavia.Web.csproj" />
+  </ItemGroup>
+
+</Project>
