@@ -108,3 +108,4 @@ C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavi
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\zelavia.Web.sourcelink.json
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\compressed\44mntzjhfv-{0}-oacd8ro5l7-oacd8ro5l7.gz
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\compressed\lgpraq3raw-{0}-oacd8ro5l7-oacd8ro5l7.gz
+C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

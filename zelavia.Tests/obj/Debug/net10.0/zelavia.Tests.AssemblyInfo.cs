@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("zelavia.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d432fc4517dbef98b2b390ff14fb79f20c32594")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9bfb5557c7626ef983dc158434a23e9804b1249e")]
 [assembly: System.Reflection.AssemblyProductAttribute("zelavia.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("zelavia.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

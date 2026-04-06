@@ -19,7 +19,7 @@ builder.Services.AddHttpClient<UserApiClient>(client =>
 
 builder.Services.AddHttpClient<FlightBookingApiClient>(client =>
     {
-        client.BaseAddress = new("https+http://bookings-api");
+        client.BaseAddress = new("https+http://flightbookings-api");
     });
 
 var app = builder.Build();

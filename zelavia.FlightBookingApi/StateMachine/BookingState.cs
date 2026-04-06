@@ -23,6 +23,8 @@ public class BookingStateMachine : MassTransitStateMachine<BookingState>
         Event(() => BookingCreated, x => x.CorrelateById(m => m.Message.BookingId));
         Event(() => PaymentConfirmed, x => x.CorrelateById(m => m.Message.BookingId));
         Event(() => BookingFailed, x => x.CorrelateById(m => m.Message.BookingId));
+        Event(() => PaymentFailed, x => x.CorrelateById(m => m.Message.BookingId));
+        Event(() => TicketIssued, x => x.CorrelateById(m => m.Message.BookingId));
 
         InstanceState(x => x.CurrentState);
 
@@ -37,24 +39,22 @@ public class BookingStateMachine : MassTransitStateMachine<BookingState>
                 .PublishAsync(context => context.Init<ProcessPayment>(new ProcessPayment(
                     BookingId: context.Saga.CorrelationId,
                     Amount: context.Saga.Amount,
-                    UserEmail: context.Saga.UserEmail)))
+                    UserId: context.Message.UserId,
+                    PaymentIntentId: $"pay_{Guid.NewGuid()}")))
                 .TransitionTo(ProcessingPayment)
         );
 
         During(ProcessingPayment,
             When(PaymentConfirmed)
-                .PublishAsync(context => context.Init<TicketIssued>(new TicketIssued(
-                    BookingId: context.Saga.CorrelationId,
-                    UserEmail: context.Saga.UserEmail))
-                    )
-                .TransitionTo(Completed)
-                .Finalize(),
-            When(PaymentFailed)
-                .PublishAsync(context => context.Init<BookingFailed>(new BookingFailed(
+                .PublishAsync(context => context.Init<BookingConfirmed>(new BookingConfirmed(
                     BookingId: context.Saga.CorrelationId,
                     UserEmail: context.Saga.UserEmail,
                     Amount: context.Saga.Amount))
                     )
+                .PublishAsync(context => context.Init<TicketIssued>(new TicketIssued(context.Saga.CorrelationId, context.Saga.UserEmail)))
+                .TransitionTo(Completed)
+                .Finalize(),
+            When(PaymentFailed)
                 .TransitionTo(Failed)
                 .Finalize()
             );
@@ -65,10 +65,11 @@ public class BookingStateMachine : MassTransitStateMachine<BookingState>
 public class BookingState : SagaStateMachineInstance
 {
     public Guid CorrelationId { get; set; }
-    public State CurrentState { get; set; } = null!;
+    public string CurrentState { get; set; } = null!;
 
     public decimal Amount { get; set; }
-    public string PaymentIntendId { get; set; } = null!;
+    public string PaymentIntentId { get; set; } = null!;
     public DateTime BookingDateUtc { get; set; }
     public string UserEmail { get; set; } = null!;
+    public Guid UserId { get; set; }
 }
