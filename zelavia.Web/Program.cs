@@ -14,7 +14,12 @@ builder.Services.AddOutputCache();
 
 builder.Services.AddHttpClient<UserApiClient>(client =>
     {
-        client.BaseAddress = new("https+http://apiservice");
+        client.BaseAddress = new("https+http://users-api");
+    });
+
+builder.Services.AddHttpClient<BookingsApiClient>(client =>
+    {
+        client.BaseAddress = new("https+http://bookings-api");
     });
 
 var app = builder.Build();

@@ -9,8 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\zelavia.ApiService\zelavia.ApiService.csproj" />
+    <ProjectReference Include="..\zelavia.UsersApi\zelavia.UsersApi.csproj" />
     <ProjectReference Include="..\zelavia.Web\zelavia.Web.csproj" />
+    <ProjectReference Include="..\zelavia.BookingsApi\zelavia.BookingsApi.csproj" />
+
   </ItemGroup>
 
 </Project>

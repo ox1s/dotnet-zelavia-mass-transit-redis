@@ -91,7 +91,6 @@ C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavi
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\zelavia.AppHost.AssemblyInfoInputs.cache
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\zelavia.AppHost.AssemblyInfo.cs
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\zelavia.AppHost.csproj.CoreCompileInputs.cache
-C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\Aspire\references\zelavia_ApiService.ProjectMetadata.g.cs
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\Aspire\references\zelavia_Web.ProjectMetadata.g.cs
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\Aspire\references\_AppHost.ProjectMetadata.g.cs
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\zelavia..873B69ED.Up2Date
@@ -100,3 +99,6 @@ C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavi
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\zelavia.AppHost.pdb
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\zelavia.AppHost.genruntimeconfig.cache
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\ref\zelavia.AppHost.dll
+C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\Aspire\references\zelavia_BookingsApi.ProjectMetadata.g.cs
+C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\zelavia.AppHost.sourcelink.json
+C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\Aspire\references\zelavia_UsersApi.ProjectMetadata.g.cs

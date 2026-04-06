@@ -2,7 +2,7 @@
 @attribute [StreamRendering(true)]
 @attribute [OutputCache(Duration = 5)]
 
-@inject ArrivalsApiClient ArrivalsApi
+@inject BookingsApiClient BookingApi
 
 <PageTitle>Arrivals</PageTitle>
 
@@ -20,17 +20,17 @@ else
         <thead>
             <tr>
                 <th>Id</th>
-                <th aria-label="Email">Email</th>
-                <th aria-label="Wallet">Wallet</th>
+                <th aria-label="ArrivalUtc">Time</th>
+                <th aria-label="Price">Price</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var user in arrivals)
+            @foreach (var arrival in arrivals)
             {
                 <tr>
-                    <td>@user.Id</td>
-                    <td>@user.Email</td>
-                    <td>@user.Wallet</td>
+                    <td>@arrival.Id</td>
+                    <td>@arrival.ArrivalUtc</td>
+                    <td>@arrival.Price</td>
                 </tr>
             }
         </tbody>
@@ -38,10 +38,10 @@ else
 }
 
 @code {
-    private List<User> arrivals = null!;
+    private List<Arrival> arrivals = null!;
 
     protected override async Task OnInitializedAsync()
     {
-        arrivals = await ArrivalsApi.GetArrivalsAsyn();
+        arrivals = await BookingApi.GetArrivalsAsync();
     }
 }
