@@ -3,7 +3,7 @@ var builder = DistributedApplication.CreateBuilder(args);
 var usersApi = builder.AddProject<Projects.zelavia_UsersApi>("users-api")
     .WithHttpHealthCheck("/health");
 
-var bookingApi = builder.AddProject<Projects.zelavia_BookingsApi>("bookings-api")
+var flightbookings = builder.AddProject<Projects.zelavia_FlightBookingApi>("flightbookings-api")
     .WithHttpHealthCheck("/health");
 
 builder.AddProject<Projects.zelavia_Web>("webfrontend")
@@ -11,7 +11,7 @@ builder.AddProject<Projects.zelavia_Web>("webfrontend")
     .WithHttpHealthCheck("/health")
     .WithReference(usersApi)
     .WaitFor(usersApi)
-    .WithReference(bookingApi)
-    .WaitFor(bookingApi);
+    .WithReference(flightbookings)
+    .WaitFor(flightbookings);
 
 builder.Build().Run();

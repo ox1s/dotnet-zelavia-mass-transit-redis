@@ -1,0 +1,6 @@
+@zelavia.PaymentsApi_HostAddress = http://localhost:5053
+
+GET {{zelavia.PaymentsApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

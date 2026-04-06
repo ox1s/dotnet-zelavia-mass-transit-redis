@@ -1,10 +1,15 @@
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
-builder.Services.AddProblemDetails();
-builder.Services.AddOpenApi();
+var services = builder.Services;
+
+services.AddProblemDetails();
+services.AddOpenApi();
+
+
 var app = builder.Build();
 app.UseExceptionHandler();
+
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
@@ -22,3 +27,4 @@ app.MapDefaultEndpoints();
 app.Run();
 
 record Arrival(Guid Id, DateTime ArrivalUtc, decimal price);
+record Booking(Guid ArrivalId, Guid UserId, DateTime BookUtc);

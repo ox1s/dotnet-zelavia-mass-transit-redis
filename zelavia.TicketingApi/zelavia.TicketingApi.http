@@ -1,0 +1,6 @@
+@zelavia.TicketingApi_HostAddress = http://localhost:5219
+
+GET {{zelavia.TicketingApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

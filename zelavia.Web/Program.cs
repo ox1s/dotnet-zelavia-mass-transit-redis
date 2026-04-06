@@ -17,7 +17,7 @@ builder.Services.AddHttpClient<UserApiClient>(client =>
         client.BaseAddress = new("https+http://users-api");
     });
 
-builder.Services.AddHttpClient<BookingsApiClient>(client =>
+builder.Services.AddHttpClient<FlightBookingApiClient>(client =>
     {
         client.BaseAddress = new("https+http://bookings-api");
     });

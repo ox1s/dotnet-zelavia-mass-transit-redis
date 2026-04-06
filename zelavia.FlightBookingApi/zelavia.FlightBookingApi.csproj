@@ -8,9 +8,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\zelavia.ServiceDefaults\zelavia.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\zelavia.Contracts\zelavia.Contracts.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="9.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.5" />
   </ItemGroup>
 

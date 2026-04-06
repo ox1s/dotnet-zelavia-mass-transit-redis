@@ -1,0 +1,15 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="zelavia.AppHost/zelavia.AppHost.csproj" />
+  <Project Path="zelavia.FlightBookingApi/zelavia.FlightBookingApi.csproj" />
+  <Project Path="zelavia.Contracts/zelavia.Contracts.csproj" />
+  <Project Path="zelavia.PaymentsApi/zelavia.PaymentsApi.csproj" />
+  <Project Path="zelavia.ServiceDefaults/zelavia.ServiceDefaults.csproj" />
+  <Project Path="zelavia.Tests/zelavia.Tests.csproj" />
+  <Project Path="zelavia.UsersApi/zelavia.UsersApi.csproj" />
+  <Project Path="zelavia.Web/zelavia.Web.csproj" />
+</Solution>

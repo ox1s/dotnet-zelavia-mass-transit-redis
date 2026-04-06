@@ -1,6 +1,6 @@
 namespace zelavia.Web;
 
-public class BookingsApiClient(HttpClient httpClient)
+public class FlightBookingApiClient(HttpClient httpClient)
 {
     public async Task<List<Arrival>> GetArrivalsAsync(CancellationToken cancellationToken = default)
     {

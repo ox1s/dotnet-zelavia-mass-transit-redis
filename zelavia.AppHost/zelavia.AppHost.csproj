@@ -11,7 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\zelavia.UsersApi\zelavia.UsersApi.csproj" />
     <ProjectReference Include="..\zelavia.Web\zelavia.Web.csproj" />
-    <ProjectReference Include="..\zelavia.BookingsApi\zelavia.BookingsApi.csproj" />
+    <ProjectReference Include="..\zelavia.FlightBookingApi\zelavia.FlightBookingApi.csproj" />
 
   </ItemGroup>
 
