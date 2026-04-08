@@ -118,3 +118,4 @@ C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavi
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\bin\Debug\net10.0\ZstdSharp.dll
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\Aspire\references\zelavia_PaymentsApi.ProjectMetadata.g.cs
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\Aspire\references\zelavia_TicketingApi.ProjectMetadata.g.cs
+C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\bin\Debug\net10.0\CommunityToolkit.Aspire.Hosting.MailPit.dll

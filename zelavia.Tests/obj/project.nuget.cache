@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IVicTHg9pCU=",
+  "dgSpecHash": "vlCxhqoJcmY=",
   "success": true,
   "projectFilePath": "C:\\Users\\oadmin\\home\\resources\\projects\\dotnet-zelavia-mass-transit-redis\\zelavia.Tests\\zelavia.Tests.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "C:\\Users\\oadmin\\.nuget\\packages\\aspnetcore.healthchecks.npgsql\\9.0.0\\aspnetcore.healthchecks.npgsql.9.0.0.nupkg.sha512",
     "C:\\Users\\oadmin\\.nuget\\packages\\aspnetcore.healthchecks.rabbitmq\\9.0.0\\aspnetcore.healthchecks.rabbitmq.9.0.0.nupkg.sha512",
     "C:\\Users\\oadmin\\.nuget\\packages\\aspnetcore.healthchecks.uris\\9.0.0\\aspnetcore.healthchecks.uris.9.0.0.nupkg.sha512",
+    "C:\\Users\\oadmin\\.nuget\\packages\\communitytoolkit.aspire.hosting.mailpit\\13.2.1-beta.532\\communitytoolkit.aspire.hosting.mailpit.13.2.1-beta.532.nupkg.sha512",
     "C:\\Users\\oadmin\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
     "C:\\Users\\oadmin\\.nuget\\packages\\dnsclient\\1.8.0\\dnsclient.1.8.0.nupkg.sha512",
     "C:\\Users\\oadmin\\.nuget\\packages\\fractions\\7.3.0\\fractions.7.3.0.nupkg.sha512",

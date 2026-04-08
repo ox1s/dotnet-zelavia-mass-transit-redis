@@ -2,7 +2,7 @@ using MassTransit;
 using MassTransit.EntityFrameworkCoreIntegration;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using zelavia.BookingsApi.StateMachine;
+using zelavia.FlightBookingApi.Sagas;
 
 namespace zelavia.FlightBookingApi.Data;
 

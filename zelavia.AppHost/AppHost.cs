@@ -7,6 +7,7 @@ var rabbitmq = builder.AddRabbitMQ("messaging")
 var mongo = builder.AddMongoDB("mongo")
                    .WithLifetime(ContainerLifetime.Persistent);
 var mongodb = mongo.AddDatabase("payments");
+var mailpit = builder.AddMailPit("mailpit");
 
 var usersApi = builder.AddProject<Projects.zelavia_UsersApi>("users-api")
     .WithHttpHealthCheck("/health");
@@ -26,6 +27,8 @@ var paymentsApi = builder.AddProject<Projects.zelavia_PaymentsApi>("payments-api
     .WaitFor(mongodb)
     .WithReference(mongodb);
 
+var ticketingApi = builder.AddProject<Projects.zelavia_TicketingApi>("ticketing-api")
+    .WithReference(mailpit);
 
 
 builder.AddProject<Projects.zelavia_Web>("webfrontend")

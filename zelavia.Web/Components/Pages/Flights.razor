@@ -1,0 +1,86 @@
+@page "/flights"
+@rendermode InteractiveServer
+@attribute [StreamRendering(true)]
+
+@inject FlightBookingApiClient FlightBookingApi
+@inject UserApiClient UserApi
+
+<PageTitle>Flights</PageTitle>
+
+<h1>Flights</h1>
+
+<p>This component demonstrates showing data loaded from a backend API service.</p>
+
+
+
+@if (flights == null || users == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="mb-3">
+        <div class="mb-3">
+            <label>Select user:</label>
+            <select class="form-select" @onchange="(e) => selectedUserId = Guid.Parse(e.Value!.ToString()!)">
+                <option value="">-- select user --</option>
+                @foreach (var user in users)
+                {
+                    <option value="@user.Id">@user.Email</option>
+                }
+            </select>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Time</th>
+                <th>Price</th>
+                <th>Book</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flight in flights)
+            {
+                <tr>
+                    <td>@flight.Id</td>
+                    <td>@flight.FlightUtc.ToShortDateString()</td>
+                    <td>@flight.Price</td>
+                    <td>
+                        <button class="btn btn-primary"
+                                @onclick="() => BookFlight(flight)">
+                            Book
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Flight> flights = null!;
+    private List<User> users = null!;
+
+    private Guid? selectedUserId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        flights = await FlightBookingApi.GetFlightsAsync();
+        users = await UserApi.GetUsersAsync();
+    }
+
+    private async Task BookFlight(Flight flight)
+    {
+        if (selectedUserId is null)
+            return;
+
+        var user = users!.First(u => u.Id == selectedUserId);
+
+        await FlightBookingApi.BookFlightAsync(user.Id, user.Email, flight.Id);
+
+        Console.WriteLine($"Flight {flight.Id} booked for {user.Email}");
+    }
+}

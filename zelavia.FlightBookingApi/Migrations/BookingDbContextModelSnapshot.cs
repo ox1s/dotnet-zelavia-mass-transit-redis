@@ -22,7 +22,7 @@ namespace zelavia.FlightBookingApi.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("zelavia.BookingsApi.StateMachine.BookingState", b =>
+            modelBuilder.Entity("zelavia.FlightBookingApi.Sagas.BookingState", b =>
                 {
                     b.Property<Guid>("CorrelationId")
                         .HasColumnType("uuid");

@@ -436,6 +436,22 @@
           }
         }
       },
+      "CommunityToolkit.Aspire.Hosting.MailPit/13.2.1-beta.532": {
+        "type": "package",
+        "dependencies": {
+          "Aspire.Hosting": "13.2.0-preview.1.26152.2"
+        },
+        "compile": {
+          "lib/net10.0/CommunityToolkit.Aspire.Hosting.MailPit.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/CommunityToolkit.Aspire.Hosting.MailPit.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "coverlet.collector/6.0.2": {
         "type": "package",
         "build": {
@@ -2642,10 +2658,11 @@
         "dependencies": {
           "Aspire.Dashboard.Sdk.win-x64": "13.2.1",
           "Aspire.Hosting.AppHost": "13.2.1",
-          "Aspire.Hosting.MongoDB": "0.0.0",
+          "Aspire.Hosting.MongoDB": "13.2.1",
           "Aspire.Hosting.Orchestration.win-x64": "13.2.1",
           "Aspire.Hosting.PostgreSQL": "13.2.1",
-          "Aspire.Hosting.RabbitMQ": "13.2.1"
+          "Aspire.Hosting.RabbitMQ": "13.2.1",
+          "CommunityToolkit.Aspire.Hosting.MailPit": "13.2.1-beta.532"
         },
         "compile": {
           "bin/placeholder/zelavia.AppHost.dll": {}
@@ -3072,6 +3089,25 @@
         "lib/net8.0/HealthChecks.Uris.xml",
         "lib/netstandard2.0/HealthChecks.Uris.dll",
         "lib/netstandard2.0/HealthChecks.Uris.xml"
+      ]
+    },
+    "CommunityToolkit.Aspire.Hosting.MailPit/13.2.1-beta.532": {
+      "sha512": "eMeBAX4+J5y5XF1o7blvd4Gzi6Iu/IT5E2OWFlrIMMr8nEBzdQoGYHTV8HxwwMJyd9+eLez8ledAhH8NgU9Luw==",
+      "type": "package",
+      "path": "communitytoolkit.aspire.hosting.mailpit/13.2.1-beta.532",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "communitytoolkit.aspire.hosting.mailpit.13.2.1-beta.532.nupkg.sha512",
+        "communitytoolkit.aspire.hosting.mailpit.nuspec",
+        "lib/net10.0/CommunityToolkit.Aspire.Hosting.MailPit.dll",
+        "lib/net10.0/CommunityToolkit.Aspire.Hosting.MailPit.xml",
+        "lib/net8.0/CommunityToolkit.Aspire.Hosting.MailPit.dll",
+        "lib/net8.0/CommunityToolkit.Aspire.Hosting.MailPit.xml",
+        "lib/net9.0/CommunityToolkit.Aspire.Hosting.MailPit.dll",
+        "lib/net9.0/CommunityToolkit.Aspire.Hosting.MailPit.xml",
+        "nuget.png"
       ]
     },
     "coverlet.collector/6.0.2": {
@@ -6240,7 +6276,6 @@
       },
       "frameworks": {
         "net10.0": {
-          "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
             "C:\\Users\\oadmin\\home\\resources\\projects\\dotnet-zelavia-mass-transit-redis\\zelavia.AppHost\\zelavia.AppHost.csproj": {
@@ -6263,7 +6298,6 @@
     },
     "frameworks": {
       "net10.0": {
-        "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
           "Aspire.Hosting.Testing": {

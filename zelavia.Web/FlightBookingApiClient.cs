@@ -2,20 +2,34 @@ namespace zelavia.Web;
 
 public class FlightBookingApiClient(HttpClient httpClient)
 {
-    public async Task<List<Arrival>> GetArrivalsAsync(CancellationToken cancellationToken = default)
+    public async Task<List<Flight>> GetFlightsAsync(CancellationToken cancellationToken = default)
     {
-        List<Arrival>? arrivals = null;
+        List<Flight>? flights = null;
 
-        await foreach (var arrival in httpClient.GetFromJsonAsAsyncEnumerable<Arrival>("/arrivals", cancellationToken))
+        await foreach (var flight in httpClient.GetFromJsonAsAsyncEnumerable<Flight>("/flights", cancellationToken))
         {
-            if (arrival is not null)
+            if (flight is not null)
             {
-                arrivals ??= [];
-                arrivals.Add(arrival);
+                flights ??= new List<Flight>();
+                flights.Add(flight);
             }
         }
-        return arrivals ?? [];
+
+        return flights ?? new List<Flight>();
     }
 
+    public async Task BookFlightAsync(Guid userId, string userEmail, Guid flightId, CancellationToken cancellationToken = default)
+    {
+        var response = await httpClient.PostAsJsonAsync(
+            $"/flights/{flightId}/book",
+            new
+            {
+                UserId = userId,
+                UserEmail = userEmail,
+            },
+            cancellationToken);
+
+        response.EnsureSuccessStatusCode();
+    }
 }
-public record Arrival(Guid Id, DateTime ArrivalUtc, decimal Price);
+public record Flight(Guid Id, DateTime FlightUtc, decimal Price);

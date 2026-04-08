@@ -64,7 +64,7 @@
             },
             "Aspire.Hosting.MongoDB": {
               "target": "Package",
-              "version": "[*, )"
+              "version": "[13.2.1, )"
             },
             "Aspire.Hosting.Orchestration.win-x64": {
               "target": "Package",
@@ -78,6 +78,10 @@
             "Aspire.Hosting.RabbitMQ": {
               "target": "Package",
               "version": "[13.2.1, )"
+            },
+            "CommunityToolkit.Aspire.Hosting.MailPit": {
+              "target": "Package",
+              "version": "[13.2.1-beta.532, )"
             }
           },
           "imports": [

@@ -11,7 +11,8 @@
           "Aspire.Hosting.AppHost": "13.2.1",
           "Aspire.Hosting.MongoDB": "13.2.1",
           "Aspire.Hosting.PostgreSQL": "13.2.1",
-          "Aspire.Hosting.RabbitMQ": "13.2.1"
+          "Aspire.Hosting.RabbitMQ": "13.2.1",
+          "CommunityToolkit.Aspire.Hosting.MailPit": "13.2.1-beta.532"
         },
         "runtime": {
           "zelavia.AppHost.dll": {}
@@ -221,6 +222,17 @@
           "lib/net8.0/HealthChecks.Uris.dll": {
             "assemblyVersion": "9.0.0.0",
             "fileVersion": "9.0.0.0"
+          }
+        }
+      },
+      "CommunityToolkit.Aspire.Hosting.MailPit/13.2.1-beta.532": {
+        "dependencies": {
+          "Aspire.Hosting": "13.2.1"
+        },
+        "runtime": {
+          "lib/net10.0/CommunityToolkit.Aspire.Hosting.MailPit.dll": {
+            "assemblyVersion": "13.2.1.0",
+            "fileVersion": "13.2.1.0"
           }
         }
       },
@@ -769,6 +781,13 @@
       "sha512": "sha512-XYdNlA437KeF8p9qOpZFyNqAN+c0FXt/JjTvzH/Qans0q0O3pPE8KPnn39ucQQjR/Roum1vLTP3kXiUs8VHyuA==",
       "path": "aspnetcore.healthchecks.uris/9.0.0",
       "hashPath": "aspnetcore.healthchecks.uris.9.0.0.nupkg.sha512"
+    },
+    "CommunityToolkit.Aspire.Hosting.MailPit/13.2.1-beta.532": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eMeBAX4+J5y5XF1o7blvd4Gzi6Iu/IT5E2OWFlrIMMr8nEBzdQoGYHTV8HxwwMJyd9+eLez8ledAhH8NgU9Luw==",
+      "path": "communitytoolkit.aspire.hosting.mailpit/13.2.1-beta.532",
+      "hashPath": "communitytoolkit.aspire.hosting.mailpit.13.2.1-beta.532.nupkg.sha512"
     },
     "DnsClient/1.8.0": {
       "type": "package",

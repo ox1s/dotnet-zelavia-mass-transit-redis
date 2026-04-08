@@ -4,7 +4,10 @@ using zelavia.PaymentsApi.Data;
 
 namespace zelavia.PaymentsApi.Consumers;
 
-public class ProcessPaymentConsumer(IPaymentService paymentService, PaymentDbContext dbContext, ILogger<ProcessPaymentConsumer> logger) : IConsumer<ProcessPayment>
+public class ProcessPaymentConsumer(
+    IPaymentService paymentService,
+    PaymentDbContext dbContext,
+    ILogger<ProcessPaymentConsumer> logger) : IConsumer<ProcessPayment>
 {
     public async Task Consume(ConsumeContext<ProcessPayment> context)
     {
@@ -26,12 +29,12 @@ public class ProcessPaymentConsumer(IPaymentService paymentService, PaymentDbCon
                     PaymentIntentId: payment.PaymentIntentId
                 ));
 
-                await dbContext.Payments.AddAsync( payment );
+                await dbContext.Payments.AddAsync(payment);
                 await dbContext.SaveChangesAsync();
             }
             else
             {
-                await context.Publish<BookingFailed>(new BookingFailed
+                await context.Publish<PaymentFailed>(new PaymentFailed
                 (
                     BookingId: context.Message.BookingId,
                     Reason: "Payment proccesing error"
