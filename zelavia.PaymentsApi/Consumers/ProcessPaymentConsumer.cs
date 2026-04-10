@@ -23,22 +23,22 @@ public class ProcessPaymentConsumer(
 
             if (payment is not null)
             {
-                await context.Publish<PaymentConfirmed>(new PaymentConfirmed
-                (
-                    BookingId: context.Message.BookingId,
-                    PaymentIntentId: payment.PaymentIntentId
-                ));
+                await context.Publish<PaymentConfirmed>(new
+                {
+                    BookingId = context.Message.BookingId,
+                    PaymentIntentId = payment.PaymentIntentId
+                });
 
                 await dbContext.Payments.AddAsync(payment);
                 await dbContext.SaveChangesAsync();
             }
             else
             {
-                await context.Publish<PaymentFailed>(new PaymentFailed
-                (
-                    BookingId: context.Message.BookingId,
-                    Reason: "Payment proccesing error"
-                ));
+                await context.Publish<PaymentFailed>(new
+                {
+                    BookingId = context.Message.BookingId,
+                    Reason = "Payment proccesing error"
+                });
             }
 
         }
@@ -49,10 +49,11 @@ public class ProcessPaymentConsumer(
                             "Failed to process payment for booking {BookingId}",
                             context.Message.BookingId);
 
-            await context.Publish<BookingFailed>(new BookingFailed(
-                BookingId: context.Message.BookingId,
-                Reason: "Payment processing error"
-                ));
+            await context.Publish<BookingFailed>(new
+            {
+                BookingId = context.Message.BookingId,
+                Reason = "Payment processing error"
+            });
         }
     }
 }

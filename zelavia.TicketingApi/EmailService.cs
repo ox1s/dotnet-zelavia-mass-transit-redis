@@ -6,12 +6,13 @@ namespace zelavia.TicketingApi;
 public class EmailService
 {
     private readonly string _smtpHost;
-    private readonly int _smtpPort;
+    private readonly int _smptPort;
 
     public EmailService(IConfiguration configuration)
     {
-        _smtpHost = configuration.GetConnectionString("mailpit")?.Split(':')[0] ?? "localhost";
-        _smtpPort = 1025;
+        var values = configuration.GetConnectionString("mailpit")?.Split(':');
+        _smtpHost = values[1].Replace("//", "") ?? "localhost";
+        _smptPort = Convert.ToInt32(values[2]); 
     }
 
     public async Task SendEmailAsync(string to, string subject, string body)
@@ -23,13 +24,12 @@ public class EmailService
         var bb = new BodyBuilder();
         bb.TextBody = "This is a test email.";
         bb.HtmlBody = $"<h1>Hello World</h1><p>This is <b>HTML</b> email.</p> <br>{body}";
-        bb.Attachments.Add("Dometrain.png");
 
         message.Body = bb.ToMessageBody();
 
 
         using var client = new SmtpClient();
-        await client.ConnectAsync(_smtpHost, _smtpPort, false);
+        await client.ConnectAsync(_smtpHost, _smptPort, false);
         await client.SendAsync(message);
         await client.DisconnectAsync(true);
     }

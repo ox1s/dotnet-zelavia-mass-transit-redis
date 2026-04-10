@@ -27,7 +27,6 @@ public class BookingStateMap : SagaClassMap<BookingState>
     {
         entity.Property(x => x.CurrentState).HasMaxLength(64);
         entity.Property(x => x.UserEmail).HasMaxLength(256);
-        entity.Property(x => x.PaymentIntentId).HasMaxLength(64);
         entity.Property(x => x.Amount);
     }
 }

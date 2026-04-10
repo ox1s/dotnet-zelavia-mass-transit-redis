@@ -10,7 +10,6 @@ public class BookingState : SagaStateMachineInstance
     public string CurrentState { get; set; } = null!;
 
     public decimal Amount { get; set; }
-    public string PaymentIntentId { get; set; } = null!;
     public DateTime BookingDateUtc { get; set; }
     public string UserEmail { get; set; } = null!;
     public Guid UserId { get; set; }

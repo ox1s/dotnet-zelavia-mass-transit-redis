@@ -20,7 +20,7 @@ public class FlightBookingApiClient(HttpClient httpClient)
 
     public async Task BookFlightAsync(Guid userId, string userEmail, Guid flightId, CancellationToken cancellationToken = default)
     {
-        var response = await httpClient.PostAsJsonAsync(
+        await httpClient.PostAsJsonAsync(
             $"/flights/{flightId}/book",
             new
             {
@@ -28,8 +28,6 @@ public class FlightBookingApiClient(HttpClient httpClient)
                 UserEmail = userEmail,
             },
             cancellationToken);
-
-        response.EnsureSuccessStatusCode();
     }
 }
 public record Flight(Guid Id, DateTime FlightUtc, decimal Price);

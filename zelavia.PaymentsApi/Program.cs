@@ -17,8 +17,7 @@ builder.Services.AddScoped<PaymentDbContext>(sp =>
 {
     var client = sp.GetRequiredService<IMongoClient>();
 
-    var dbName = builder.Configuration.GetValue<string>("payments");
-    var database = client.GetDatabase(dbName);
+    var database = client.GetDatabase("payments");
     return PaymentDbContext.Create(database);
 });
 

@@ -47,20 +47,23 @@ public class BookingStateMachine : MassTransitStateMachine<BookingState>
                     context.Saga.UserEmail = context.Message.UserEmail;
                     context.Saga.BookingDateUtc = DateTime.UtcNow;
                 })
-                .PublishAsync(context => context.Init<ProcessPayment>(new ProcessPayment(
-                    BookingId: context.Saga.CorrelationId,
-                    Amount: context.Saga.Amount,
-                    UserId: context.Message.UserId,
-                    PaymentIntentId: $"pay_{Guid.NewGuid()}")))
+                .PublishAsync(context => context.Init<ProcessPayment>(new
+                {
+                    BookingId = context.Saga.CorrelationId,
+                    UserId = context.Message.UserId,
+                    Amount = context.Saga.Amount,
+                    PaymentIntentId = $"pay_{Guid.NewGuid()}"
+                }))
                 .TransitionTo(ProcessingPayment)
         );
 
         During(ProcessingPayment,
             When(PaymentConfirmed)
-                .PublishAsync(context => context.Init<IssueTicket>(new IssueTicket(
-                    BookingId: context.Saga.CorrelationId,
-                    UserEmail: context.Saga.UserEmail))
-                    )
+                .PublishAsync(context => context.Init<IssueTicket>(new
+                {
+                    BookingId = context.Saga.CorrelationId,
+                    UserEmail = context.Saga.UserEmail
+                }))
                 .TransitionTo(ProccessingTicket),
             When(PaymentFailed)
                 .TransitionTo(Failed)
@@ -69,10 +72,12 @@ public class BookingStateMachine : MassTransitStateMachine<BookingState>
 
         During(ProccessingTicket,
             When(TicketIssued)
-                .PublishAsync(context => context.Init<BookingConfirmed>(new BookingConfirmed(
-                    BookingId: context.Saga.CorrelationId,
-                    UserEmail: context.Saga.UserEmail,
-                    Amount: context.Saga.Amount))
+                .PublishAsync(context => context.Init<BookingConfirmed>(new
+                {
+                    BookingId = context.Saga.CorrelationId,
+                    UserEmail = context.Saga.UserEmail,
+                    Amount = context.Saga.Amount
+                })
                     )
                 .TransitionTo(Completed),
             When(TicketFailed)

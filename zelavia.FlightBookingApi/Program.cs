@@ -1,16 +1,13 @@
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
-using zelavia.FlightBookingApi.Data;
 using zelavia.Contracts.Messages;
+using zelavia.FlightBookingApi.Data;
 using zelavia.FlightBookingApi.Sagas;
-using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
-
 builder.AddServiceDefaults();
-var services = builder.Services;
 
+var services = builder.Services;
 services.AddProblemDetails();
 services.AddOpenApi();
 
@@ -29,7 +26,7 @@ services.AddMassTransit(x =>
         {
             e.Name = "booking-state";
             e.ConcurrentMessageLimit = 8;
-        }); ;
+        });
 
     x.UsingRabbitMq((context, cfg) =>
     {
@@ -46,7 +43,7 @@ using (var scope = app.Services.CreateScope())
     dbContext.Database.Migrate();
 }
 
-app.Run();
+
 app.UseExceptionHandler();
 
 if (app.Environment.IsDevelopment())
@@ -56,26 +53,27 @@ if (app.Environment.IsDevelopment())
 
 var flights = new List<Flight>();
 
-app.MapGet("/flights", () => 
-    flights);
+app.MapGet("/flights", () => flights);
 
 app.MapPost("/flights/{flightId:guid}/book", async (
     Guid flightId,
     BookFlightRequest request,
     IPublishEndpoint endpoint) =>
 {
-    var flight = flights.FirstOrDefault(x => x.Id == flightId);   
+    var flight = flights.FirstOrDefault(x => x.Id == flightId);
 
     if (flight is null)
     {
         return Results.NotFound();
     }
 
-    await endpoint.Publish(new BookingCreated(
-        Guid.NewGuid(),
-        request.UserId,
-        request.UserEmail,
-        flight.Price));
+    await endpoint.Publish(new BookingCreated {
+        BookingDateUtc = DateTime.UtcNow,
+        BookingId = Guid.NewGuid(),
+        UserId = request.UserId,
+        UserEmail = request.UserEmail,
+        Amount = flight.Price
+    });
 
     return Results.Created();
 });
@@ -94,5 +92,4 @@ app.Run();
 
 public record Flight(Guid Id, DateTime FlightUtc, decimal Price);
 record Booking(Guid ArrivalId, Guid UserId, DateTime BookUtc);
-
 public record BookFlightRequest(Guid UserId, string UserEmail);

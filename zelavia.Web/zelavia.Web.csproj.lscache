@@ -442,9 +442,9 @@ Components/
   MainLayout.razor
   NavMenu.razor
  Pages/
-  Arrivals.razor
   Counter.razor
   Error.razor
+  Flights.razor
   Home.razor
   Users.razor
  Routes.razor
@@ -457,9 +457,9 @@ Components/
   MainLayout.razor
   NavMenu.razor
  Pages/
-  Arrivals.razor
   Counter.razor
   Error.razor
+  Flights.razor
   Home.razor
   Users.razor
  Routes.razor

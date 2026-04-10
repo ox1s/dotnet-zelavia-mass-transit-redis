@@ -2,6 +2,7 @@ namespace zelavia.PaymentsApi.Data;
 
 public class Payment
 {
+    public Guid Id { get; set; }
     public Guid BookingId { get; set; }
     public Guid UserId {  get; set; }
     public decimal Amount { get; set; }

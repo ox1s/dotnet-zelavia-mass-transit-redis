@@ -28,6 +28,9 @@ var paymentsApi = builder.AddProject<Projects.zelavia_PaymentsApi>("payments-api
     .WithReference(mongodb);
 
 var ticketingApi = builder.AddProject<Projects.zelavia_TicketingApi>("ticketing-api")
+    .WithHttpHealthCheck("/health")
+    .WaitFor(rabbitmq)
+    .WithReference(rabbitmq)
     .WithReference(mailpit);
 
 

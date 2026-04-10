@@ -1,5 +1,20 @@
 namespace zelavia.Contracts.Messages;
 
-public record ProcessPayment(Guid BookingId, Guid UserId, decimal Amount, string PaymentIntentId);
-public record PaymentConfirmed(Guid BookingId, string PaymentIntentId);
-public record PaymentFailed(Guid BookingId, string Reason);
+public record ProcessPayment
+{
+    public Guid BookingId { get; init; }
+    public Guid UserId { get; init; }
+    public decimal Amount { get; init; }
+    public string PaymentIntentId { get; init; }
+}
+
+public record PaymentConfirmed
+{
+    public Guid BookingId { get; init; }
+    public string PaymentIntentId { get; init; }
+}
+public record PaymentFailed
+{
+    public Guid BookingId { get; init; }
+    public string Reason { get; init; }
+}

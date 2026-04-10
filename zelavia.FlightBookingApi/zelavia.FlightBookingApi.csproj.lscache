@@ -61,13 +61,19 @@ Data/BookingDbContext.cs
 Migrations/
  20260406151802_Initial.cs
  20260406151802_Initial.Designer.cs
+ 20260408150354_InitialMigration.cs
+ 20260408150354_InitialMigration.Designer.cs
+ 20260408150747_AddBookingStateTable.cs
+ 20260408150747_AddBookingStateTable.Designer.cs
+ 20260410142637_DeletePaymentId.cs
+ 20260410142637_DeletePaymentId.Designer.cs
  BookingDbContextModelSnapshot.cs
 obj/Debug/net10.0/
  .NETCoreApp,Version=v10.0.AssemblyAttributes.cs
  zelavia.FlightBookingApi.AssemblyInfo.cs
  zelavia.FlightBookingApi.GlobalUsings.g.cs
 Program.cs
-StateMachine/
+Sagas/
  BookingState.cs
  BookingStateMachine.cs
 
@@ -396,6 +402,7 @@ StateMachine/
  masstransit/9.1.0/lib/net10.0/MassTransit.dll
  microsoft.aspnetcore.openapi/10.0.5/lib/net10.0/Microsoft.AspNetCore.OpenApi.dll
  microsoft.entityframeworkcore.abstractions/10.0.5/lib/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+ microsoft.entityframeworkcore.inmemory/10.0.5/lib/net10.0/Microsoft.EntityFrameworkCore.InMemory.dll
  microsoft.entityframeworkcore.relational/10.0.5/lib/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
  microsoft.entityframeworkcore/10.0.5/lib/net10.0/Microsoft.EntityFrameworkCore.dll
  microsoft.extensions.ambientmetadata.application/10.2.0/lib/net10.0/Microsoft.Extensions.AmbientMetadata.Application.dll
