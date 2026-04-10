@@ -26,7 +26,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("zelavia.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9e9549ba4a5b582540d42e5e53b29bde1944f8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4a1ec3af85b7949f623fa640f0927588b7bd012")]
 [assembly: System.Reflection.AssemblyProductAttribute("zelavia.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("zelavia.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

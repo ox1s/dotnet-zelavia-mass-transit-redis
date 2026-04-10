@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\zelavia.Contracts\zelavia.Contracts.csproj" />
+    <ProjectReference Include="..\zelavia.ServiceDefaults\zelavia.ServiceDefaults.csproj" />
   </ItemGroup>
 
 </Project>

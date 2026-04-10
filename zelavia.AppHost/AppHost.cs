@@ -19,6 +19,9 @@ var flightbookings = builder.AddProject<Projects.zelavia_FlightBookingApi>("flig
     .WaitFor(postgresdb)
     .WithReference(postgresdb);
 var paymentsApi = builder.AddProject<Projects.zelavia_PaymentsApi>("payments-api")
+    .WithExternalHttpEndpoints()
+    .WithReference(usersApi)
+    .WaitFor(usersApi)
     .WithHttpHealthCheck("/health")
     .WaitFor(rabbitmq)
     .WithReference(rabbitmq)

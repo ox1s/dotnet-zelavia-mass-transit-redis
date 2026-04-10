@@ -9,7 +9,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
 
-builder.Services.AddTransient<IPaymentService, PaymentService>();
+builder.AddServiceDefaults();
+
+builder.Services.AddHttpClient<IPaymentService, PaymentService>(client =>
+{
+    client.BaseAddress = new("http://users-api");
+});
 
 builder.AddMongoDBClient("mongo");
 

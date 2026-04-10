@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
@@ -28,6 +30,17 @@ app.MapPost("/users", (string email, decimal wallet) =>
     users.Add(user);
     return Results.Created($"/users/{userId:guid}/", user);
 });
+
+app.MapPost("/users/{id:guid}/deduct", (Guid id, decimal amount) =>
+{
+    var user = users.FirstOrDefault(x => x.Id == id);
+    if (user is null) return Results.NotFound();
+
+    user.Wallet -= amount;
+
+    return Results.Ok();
+});
+
 app.MapGet("/users/{id:guid}", (Guid id) =>
 {
     var user = users.FirstOrDefault(x => x.Id == id);
@@ -41,4 +54,18 @@ app.MapDefaultEndpoints();
 
 app.Run();
 
-record User(Guid Id, string Email, decimal Wallet);
+public class User
+{
+    public User(Guid id, string email, decimal wallet)
+    {
+        Id = id;
+        Email = email;
+        Wallet = wallet;
+    }
+
+    public Guid Id { get; set; }
+    public string Email { get; set; }
+    public decimal Wallet { get; set; }
+
+
+}
