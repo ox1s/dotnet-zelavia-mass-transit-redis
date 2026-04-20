@@ -62,6 +62,10 @@
               "version": "[13.2.1, )",
               "autoReferenced": true
             },
+            "Aspire.Hosting.JavaScript": {
+              "target": "Package",
+              "version": "[13.2.1, )"
+            },
             "Aspire.Hosting.MongoDB": {
               "target": "Package",
               "version": "[13.2.1, )"

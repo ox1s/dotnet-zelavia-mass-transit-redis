@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "55jH0IkR+g0=",
+  "dgSpecHash": "rurCL8eX1Rw=",
   "success": true,
   "projectFilePath": "C:\\Users\\oadmin\\home\\resources\\projects\\dotnet-zelavia-mass-transit-redis\\zelavia.AppHost\\zelavia.AppHost.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\oadmin\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\13.2.1\\aspire.dashboard.sdk.win-x64.13.2.1.nupkg.sha512",
     "C:\\Users\\oadmin\\.nuget\\packages\\aspire.hosting\\13.2.1\\aspire.hosting.13.2.1.nupkg.sha512",
     "C:\\Users\\oadmin\\.nuget\\packages\\aspire.hosting.apphost\\13.2.1\\aspire.hosting.apphost.13.2.1.nupkg.sha512",
+    "C:\\Users\\oadmin\\.nuget\\packages\\aspire.hosting.javascript\\13.2.1\\aspire.hosting.javascript.13.2.1.nupkg.sha512",
     "C:\\Users\\oadmin\\.nuget\\packages\\aspire.hosting.mongodb\\13.2.1\\aspire.hosting.mongodb.13.2.1.nupkg.sha512",
     "C:\\Users\\oadmin\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\13.2.1\\aspire.hosting.orchestration.win-x64.13.2.1.nupkg.sha512",
     "C:\\Users\\oadmin\\.nuget\\packages\\aspire.hosting.postgresql\\13.2.1\\aspire.hosting.postgresql.13.2.1.nupkg.sha512",

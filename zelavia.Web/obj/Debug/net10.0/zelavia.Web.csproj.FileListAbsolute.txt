@@ -102,7 +102,6 @@ C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavi
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\staticwebassets.development.json
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\staticwebassets.build.endpoints.json
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\swae.build.ex.cache
-C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\zelavia..3331D34C.Up2Date
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\zelavia.Web.dll
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.Web\obj\Debug\net10.0\refint\zelavia.Web.dll

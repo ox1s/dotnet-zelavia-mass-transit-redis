@@ -2,16 +2,17 @@ using zelavia.PaymentsApi.Data;
 
 namespace zelavia.PaymentsApi;
 
-public class PaymentService(HttpClient _httpClient) : IPaymentService
+public class PaymentService(HttpClient httpClient) : IPaymentService
 {
+
     public async Task<Payment?> ProcessPaymentAsync(
         Guid bookingId,
         Guid userId,
         decimal amount,
         string paymentIntentId,
-        CancellationToken ct = default)
-    {
-        var user = await _httpClient.GetFromJsonAsync<UserProfileDto>($"/users/{userId}", ct);
+        CancellationToken ct = default
+){
+        var user = await httpClient.GetFromJsonAsync<UserProfileDto>($"/users/{userId}", ct);
 
         if (user == null) return null;
 
@@ -20,7 +21,7 @@ public class PaymentService(HttpClient _httpClient) : IPaymentService
             throw new ArgumentException("No-no-no");
         }
 
-        var updateResponse = await _httpClient.PostAsJsonAsync($"/users/{userId}/deduct", new { Amount = amount }, ct);
+        var updateResponse = await httpClient.PostAsJsonAsync($"/users/{userId}/deduct", new { Amount = amount }, ct);
         updateResponse.EnsureSuccessStatusCode();
 
         return new Payment(bookingId, userId, amount, paymentIntentId, DateTime.UtcNow);

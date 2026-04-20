@@ -119,3 +119,4 @@ C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavi
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\zelavia.AppHost.pdb
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\zelavia.AppHost.genruntimeconfig.cache
 C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\obj\Debug\net10.0\ref\zelavia.AppHost.dll
+C:\Users\oadmin\home\resources\projects\dotnet-zelavia-mass-transit-redis\zelavia.AppHost\bin\Debug\net10.0\Aspire.Hosting.JavaScript.dll

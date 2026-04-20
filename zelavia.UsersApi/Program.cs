@@ -31,12 +31,12 @@ app.MapPost("/users", (string email, decimal wallet) =>
     return Results.Created($"/users/{userId:guid}/", user);
 });
 
-app.MapPost("/users/{id:guid}/deduct", (Guid id, decimal amount) =>
+app.MapPost("/users/{id:guid}/deduct", (Guid id, DeductRequest request) =>
 {
     var user = users.FirstOrDefault(x => x.Id == id);
     if (user is null) return Results.NotFound();
 
-    user.Wallet -= amount;
+    user.Wallet -= request.Amount;
 
     return Results.Ok();
 });
@@ -45,8 +45,8 @@ app.MapGet("/users/{id:guid}", (Guid id) =>
 {
     var user = users.FirstOrDefault(x => x.Id == id);
     return user is null ?
-        Results.Ok(user)
-        : Results.NotFound();
+        Results.NotFound()
+        : Results.Ok(user);
 });
 
 
@@ -69,3 +69,4 @@ public class User
 
 
 }
+public record DeductRequest(decimal Amount);

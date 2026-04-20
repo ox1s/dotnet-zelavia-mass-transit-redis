@@ -11,10 +11,6 @@ builder.Services.AddOpenApi();
 
 builder.AddServiceDefaults();
 
-builder.Services.AddHttpClient<IPaymentService, PaymentService>(client =>
-{
-    client.BaseAddress = new("http://users-api");
-});
 
 builder.AddMongoDBClient("mongo");
 
@@ -35,6 +31,12 @@ builder.Services.AddMassTransit(x =>
         cfg.Host(builder.Configuration.GetConnectionString("messaging"));
         cfg.ConfigureEndpoints(context);
     });
+});
+
+
+builder.Services.AddHttpClient<IPaymentService, PaymentService>(client =>
+{
+    client.BaseAddress = new("https+http://users-api");
 });
 
 var app = builder.Build();

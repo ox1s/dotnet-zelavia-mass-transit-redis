@@ -77,8 +77,7 @@ public class BookingStateMachine : MassTransitStateMachine<BookingState>
                     BookingId = context.Saga.CorrelationId,
                     UserEmail = context.Saga.UserEmail,
                     Amount = context.Saga.Amount
-                })
-                    )
+                }))
                 .TransitionTo(Completed),
             When(TicketFailed)
                 .TransitionTo(Failed)

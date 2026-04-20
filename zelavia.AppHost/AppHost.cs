@@ -1,3 +1,5 @@
+using k8s.KubeConfigModels;
+
 var builder = DistributedApplication.CreateBuilder(args);
 
 var postgres = builder.AddPostgres("postgres");
@@ -44,5 +46,16 @@ builder.AddProject<Projects.zelavia_Web>("webfrontend")
     .WaitFor(usersApi)
     .WithReference(flightbookings)
     .WaitFor(flightbookings);
+
+//builder.AddViteApp("client-app", "../../zelavia.WebClient")
+//    .WithReference(usersApi)
+//    .WithReference(flightbookings)
+//    .WithEnvironment("VITE_API_FLIGHT_URL", flightbookings.GetEndpoint("https"))
+//    .WithEnvironment("VITE_API_USER_URL", usersApi.GetEndpoint("https"))
+
+//    .WithViteConfig("./vite.config.js")
+
+//    .WaitFor(usersApi)
+//    .WaitFor(flightbookings);
 
 builder.Build().Run();

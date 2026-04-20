@@ -22,8 +22,8 @@ public class EmailService
         message.To.Add(new MailboxAddress("Recipient", to));
         message.Subject = subject;
         var bb = new BodyBuilder();
-        bb.TextBody = "This is a test email.";
-        bb.HtmlBody = $"<h1>Hello World</h1><p>This is <b>HTML</b> email.</p> <br>{body}";
+        bb.TextBody = "TICKET";
+        bb.HtmlBody = $"<h1>This is your ticket</h1><p>Zelavia<b>Inno</b><br>{body}";
 
         message.Body = bb.ToMessageBody();
 
