@@ -65,7 +65,7 @@ public class BookingStateMachine : MassTransitStateMachine<BookingState>
                     UserEmail = context.Saga.UserEmail
                 }))
                 .TransitionTo(ProccessingTicket),
-            When(PaymentFailed)
+            When(BookingFailed)
                 .TransitionTo(Failed)
                 .Finalize()
             );
@@ -79,7 +79,7 @@ public class BookingStateMachine : MassTransitStateMachine<BookingState>
                     Amount = context.Saga.Amount
                 }))
                 .TransitionTo(Completed),
-            When(TicketFailed)
+            When(BookingFailed)
                 .TransitionTo(Failed)
                 .Finalize()
             );

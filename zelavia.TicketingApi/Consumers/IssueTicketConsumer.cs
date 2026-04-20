@@ -22,7 +22,7 @@ public class IssueTicketConsumer(
                     "Failed to process ticket for booking {BookingId}",
                     context.Message.BookingId);
 
-            await context.Publish<TicketFailed>(new
+            await context.Publish<BookingFailed>(new
             {
                 BookingId = context.Message.BookingId,
                 Reason = "ticket processing error"

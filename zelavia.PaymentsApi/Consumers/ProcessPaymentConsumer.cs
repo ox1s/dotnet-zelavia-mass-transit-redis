@@ -49,7 +49,7 @@ public class ProcessPaymentConsumer(
                             "Failed to process payment for booking {BookingId}",
                             context.Message.BookingId);
 
-            await context.Publish<PaymentFailed>(new
+            await context.Publish<BookingFailed>(new
             {
                 BookingId = context.Message.BookingId,
                 Reason = "Payment processing error"
